@@ -1,0 +1,217 @@
+/* ================================
+    Reset
+  ================================*/
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* ================================
+    Général
+  ================================*/
+
+body{
+  /*--color-bg: #03b0c4;
+  --color-bg-sec: #148d9b;
+  --color-primary: #23b8c9;
+  --color-secondary: #6fe0ec;*/
+
+  --color-primary: #1698a7;
+  --color-secondary: #49c6d4;
+
+  background-color: var(--color-primary);
+  color: white;
+  font-family: 'Sour Gummy';
+}
+
+.section .wrapper{
+  max-width: 1440px;
+  margin: 0 auto;
+  width: calc(100% - 30px);
+}
+
+p{
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* ================================
+    Headings
+  ================================*/
+
+h1,h2 {
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+h1{
+  font-size: 72px;
+  font-weight: 900;
+}
+
+h2{
+  font-size: 48px;
+  font-weight: 800;
+}
+
+
+/* ================================
+    Header
+  ================================*/
+.header{
+  position: relative;
+
+  .video_content{
+    position: relative;
+    height: 80vh;
+  }
+  
+  .video-bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    z-index: -1;
+  }
+  
+  .video-bg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .content {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    z-index: 1;
+    /*background: #000;
+    background: linear-gradient(180deg,rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 100%);*/
+    text-align: center;
+  }
+}
+
+/* ================================
+    Sections
+  ================================*/
+
+.section{
+  position: relative;
+  padding: 0px;
+
+  .grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  .grid_media{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .grid_content{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+  }
+
+  p{
+    margin-top: 10px;
+    text-align: center;
+  }
+}
+
+.section_pale{
+  background-color: var(--color-secondary);
+  padding-bottom: 20px;
+}
+
+.section_fonce{
+  padding-bottom: 250px;
+  background-color: var(--color-primary);
+}
+
+/* ================================
+    SVG Vagues
+  ================================*/
+
+.vague{
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: auto;
+  z-index: 10;
+
+  path{
+    fill: var(--color-primary);
+  }
+}
+
+.vague_pale{
+  path{
+    fill: var(--color-secondary);
+  }
+}
+
+
+@media screen and (max-width:768px) {
+  .section{
+    .grid{
+      grid-template-columns: 1fr;
+    }
+  }
+
+  h1{
+    font-size: 36px;
+  }
+
+  h2{
+    font-size: 24px;
+  }
+
+  p{
+    font-size: 18px;
+  }
+
+  .section_fonce{
+    padding-bottom: 100px;
+  }
+
+  .header{
+    .video-bg{
+      height: 50vh;
+    }
+
+    .video_content{
+      height: 50vh;
+    }
+  }
+}
